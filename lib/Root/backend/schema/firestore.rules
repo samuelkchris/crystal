@@ -1,0 +1,47 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0.
+    function userDoc() {
+          return /databases/$(database)/documents/users/$(request.auth.uid);
+        }
+        
+    // 1.
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // 2.
+    function verified() {
+      return request.auth.token.email_verified || request.auth.token.phone_number;
+    }
+
+    // 3.
+    function isValidItem() {
+      return request.resource.data.name.size() > 0 ;
+    }
+
+    match /appointments/{document} {
+      // 4.
+      allow create: if isSignedIn() && verified() && isValidItem();
+      // 5.
+      allow read: if true;
+      // 6.
+      allow write: if isValidItem() && resource.data.created_by == /databases/$(database)/documents/users/$(request.auth.uid);
+      // 7.
+      allow delete: if resource.data.created_by == /databases/$(database)/documents/users/$(request.auth.uid);
+    }
+
+    match /users/{document} {
+      allow create: if request.auth.uid == document;
+      allow read: if true;
+      allow write: if request.auth.uid == document;
+      allow delete: if false;
+    }
+
+    match /appointments/{id} {
+          allow read, write: if true;
+        }
+  }
+}

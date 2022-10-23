@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1023091135644",
+    "project_id": "crystal-2ab9d",
+    "storage_bucket": "crystal-2ab9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023091135644:android:4bba865dfffa1014748959",
+        "android_client_info": {
+          "package_name": "crystal.bites.crystal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023091135644-i6pft9r3lg8la9siqbkp9h5tv1coluqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeXwmvmkwuB7j8d9UbFIm0rYg5jaiOkFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023091135644-i6pft9r3lg8la9siqbkp9h5tv1coluqj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1023091135644-s0npqcoanuqov9bgvr3u59b4f24ih7u2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "crystal.bites.crystal"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
