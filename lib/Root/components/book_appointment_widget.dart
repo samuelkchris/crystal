@@ -182,7 +182,7 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                       ),
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Booking For',
+                        labelText: 'Ordering For',
                         labelStyle: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Lexend Deca',
                           color: Colors.black,
@@ -221,7 +221,7 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                         'Payment Method',
                         'Mobile Money',
                         'Card',
-                        'Pay on delivery'
+                        'Delivery'
                       ].toList(),
                       onChanged: (val) => setState(() => dropDownValue = val),
                       width: MediaQuery.of(context).size.width * 0.9,

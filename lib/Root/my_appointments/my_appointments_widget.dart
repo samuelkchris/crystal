@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:food_delivery_app/main.dart';
 
 import '../appointment_details/appointment_details_widget.dart';
 import '../backend/backend.dart';
-import '../components/book_appointment_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 
@@ -25,7 +25,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
         backgroundColor: FlutterFlowTheme.background,
         automaticallyImplyLeading: false,
         title: Text(
-          'Appointments',
+          'Orders',
           style: FlutterFlowTheme.title1.override(
             fontFamily: 'Lexend Deca',
           ),
@@ -37,16 +37,8 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
       backgroundColor: FlutterFlowTheme.background,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await showModalBottomSheet(
-            isScrollControlled: true,
-            context: context,
-            builder: (context) {
-              return Container(
-                height: 720,
-                child: BookAppointmentWidget(),
-              );
-            },
-          );
+          await Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Home()));
         },
         backgroundColor: FlutterFlowTheme.primaryColor,
         elevation: 8,
@@ -66,7 +58,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    'My Appointments',
+                    'My Orders',
                     style: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                     ),
@@ -207,7 +199,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                     FlutterFlowTheme.background,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(8, 4, 8, 4),
+                                                      .fromSTEB(8, 0, 8, 0),
                                                   child: Text(
                                                     dateTimeFormat(
                                                         'MMMMEEEEd',
@@ -223,18 +215,23 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                   ),
                                                 ),
                                               ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(8, 0, 0, 0),
-                                                child: Text(
-                                                  'For',
-                                                  style: FlutterFlowTheme
-                                                      .bodyText1
-                                                      .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                  ),
-                                                ),
-                                              ),
+                                              Expanded(
+                                                  flex: 1,
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                8, 0, 0, 0),
+                                                    child: Text(
+                                                      'For',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                      ),
+                                                    ),
+                                                  )),
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional

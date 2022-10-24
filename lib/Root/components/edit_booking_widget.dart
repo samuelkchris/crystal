@@ -1,14 +1,13 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:food_delivery_app/Constants/colors.dart';
+
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class EditBookingWidget extends StatefulWidget {
   EditBookingWidget({
@@ -43,7 +42,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 1,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.darkBackground,
+        color: AppColors.primary,
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
@@ -62,7 +61,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                 child: Text(
-                  'Edit Appointment',
+                  'Edit Order',
                   style: FlutterFlowTheme.title3.override(
                     fontFamily: 'Lexend Deca',
                   ),
@@ -75,9 +74,10 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                       child: Text(
-                        'Edit the fields below in order to change your appointment.',
+                        'Fill out the information below in order to complete your Order with our office.',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Lexend Deca',
+                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -111,7 +111,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                   controller: personsNameController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Booking For',
+                    labelText: 'Ordering For',
                     labelStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                     ),
@@ -130,13 +130,13 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     filled: true,
-                    fillColor: FlutterFlowTheme.darkBackground,
+                    fillColor: Colors.white,
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                   ),
                   style: FlutterFlowTheme.subtitle2.override(
                     fontFamily: 'Lexend Deca',
-                    color: FlutterFlowTheme.textColor,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -147,24 +147,24 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                   initialOption: dropDownValue ??=
                       widget.userAppointment.appointmentType,
                   options: [
-                    'Type of Appointment',
-                    'Doctors Visit',
-                    'Routine Checkup',
-                    'Scan/Update'
+                    'Payment Method',
+                    'Mobile Money',
+                    'Card',
+                    'Delivery'
                   ].toList(),
                   onChanged: (val) => setState(() => dropDownValue = val),
                   width: MediaQuery.of(context).size.width * 0.9,
                   height: 60,
                   textStyle: FlutterFlowTheme.subtitle2.override(
                     fontFamily: 'Lexend Deca',
-                    color: FlutterFlowTheme.textColor,
+                    color: Colors.black,
                   ),
                   icon: Icon(
                     Icons.keyboard_arrow_down_rounded,
                     color: FlutterFlowTheme.grayLight,
                     size: 15,
                   ),
-                  fillColor: FlutterFlowTheme.darkBackground,
+                  fillColor: Colors.white,
                   elevation: 3,
                   borderColor: FlutterFlowTheme.background,
                   borderWidth: 2,
@@ -179,7 +179,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                   controller: problemDescriptionController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'What\'s the problem?',
+                    labelText: 'What\'s Your Expectation?',
                     labelStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                     ),
@@ -198,13 +198,13 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     filled: true,
-                    fillColor: FlutterFlowTheme.darkBackground,
+                    fillColor: Colors.white,
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                   ),
                   style: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Lexend Deca',
-                    color: FlutterFlowTheme.textColor,
+                    color: Colors.black,
                   ),
                   textAlign: TextAlign.start,
                   maxLines: 8,
@@ -234,7 +234,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                       width: MediaQuery.of(context).size.width * 0.9,
                       height: 60,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.darkBackground,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                           color: FlutterFlowTheme.background,
@@ -254,10 +254,11 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20, 0, 0, 0),
                                   child: Text(
-                                    'Choose Date',
+                                    'Choose Expected Date of delivery',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Lexend Deca',
                                       fontSize: 12,
+                                      color: Colors.black,
                                     ),
                                   ),
                                 ),
