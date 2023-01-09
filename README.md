@@ -9,10 +9,10 @@ A new Food Ordering project made with flutter.
 -reorder
 -backend with firebase
 
-![alt text](./Screenshot_20221106-215529.jpg)
-![alt text](./Screenshot_20221106-215542.jpg)
-![alt text](./Screenshot_20221106-215652.jpg)
-![alt text](./Screenshot_20221106-215719.jpg)
+![alt text](./Screenshot_20221106-215529.png)
+![alt text](./Screenshot_20221106-215542.png)
+![alt text](./Screenshot_20221106-215652.png)
+![alt text](./Screenshot_20221106-215719.png)
 
 ## Getting Started
 
